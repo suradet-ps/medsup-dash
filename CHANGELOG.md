@@ -1,3 +1,13 @@
+## [1.0.4](https://github.com/pharmacist-sabot/medsup-dash/compare/v1.0.3...v1.0.4) (2026-04-15)
+
+### 📦 Dependency Updates
+
+* configure Renovate ([fbea818](https://github.com/pharmacist-sabot/medsup-dash/commit/fbea81814658b0a4157551c9dc01ce9c75158ec5))
+* configure security headers in netlify.toml for enhanced site protection ([55e8e44](https://github.com/pharmacist-sabot/medsup-dash/commit/55e8e447beff5eb168683e1ddbbf128049f6b111))
+* **deps:** update dependency @vue/tsconfig to ^0.9.0 ([#4](https://github.com/pharmacist-sabot/medsup-dash/issues/4)) ([84fefca](https://github.com/pharmacist-sabot/medsup-dash/commit/84fefcab0a2e02477705ee10ead25c4a8b1c8be7))
+* **deps:** update dependency bun to v1.3.12 ([#3](https://github.com/pharmacist-sabot/medsup-dash/issues/3)) ([ef9581f](https://github.com/pharmacist-sabot/medsup-dash/commit/ef9581f1beba9da3a898622506bea47fd6d9d315))
+* fix indentation and formatting in netlify.toml headers configuration ([e2fff7e](https://github.com/pharmacist-sabot/medsup-dash/commit/e2fff7ef8263f100a41275879c3cedee3f542df4))
+
 ## [1.0.3](https://github.com/pharmacist-sabot/medsup-dash/compare/v1.0.2...v1.0.3) (2026-03-21)
 
 ### 📝 Documentation
