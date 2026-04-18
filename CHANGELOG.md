@@ -1,3 +1,9 @@
+## [1.0.8](https://github.com/pharmacist-sabot/medsup-dash/compare/v1.0.7...v1.0.8) (2026-04-18)
+
+### 📦 Dependency Updates
+
+* **deps:** update dependency eslint-plugin-format to v2 ([#11](https://github.com/pharmacist-sabot/medsup-dash/issues/11)) ([a3467f8](https://github.com/pharmacist-sabot/medsup-dash/commit/a3467f853e151a11f6fcf0800420452dc4d7898b))
+
 ## [1.0.7](https://github.com/pharmacist-sabot/medsup-dash/compare/v1.0.6...v1.0.7) (2026-04-15)
 
 ### 📦 Dependency Updates
