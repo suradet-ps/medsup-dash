@@ -1,3 +1,9 @@
+## [1.0.12](https://github.com/suradet-ps/medsup-dash/compare/v1.0.11...v1.0.12) (2026-04-23)
+
+### 📦 Dependency Updates
+
+* **deps:** update dependency bun to v1.3.13 ([#17](https://github.com/suradet-ps/medsup-dash/issues/17)) ([e1f3453](https://github.com/suradet-ps/medsup-dash/commit/e1f3453e4ab63a4bc73dfdf41a4ec1624855ae6e))
+
 ## [1.0.11](https://github.com/suradet-ps/medsup-dash/compare/v1.0.10...v1.0.11) (2026-04-23)
 
 ### 🐛 Bug Fixes
