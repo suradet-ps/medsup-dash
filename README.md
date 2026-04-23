@@ -11,8 +11,8 @@
 </p>
 
 <p>
-  <a href="https://github.com/pharmacist-sabot/medsup-dash/actions/workflows/ci.yml"><img src="https://github.com/pharmacist-sabot/medsup-dash/actions/workflows/ci.yml/badge.svg" alt="CI Status"></a>
-  <a href="https://github.com/pharmacist-sabot/medsup-dash/blob/main/LICENSE"><img src="https://img.shields.io/github/license/pharmacist-sabot/medsup-dash" alt="License"></a>
+  <a href="https://github.com/suradet-ps/medsup-dash/actions/workflows/ci.yml"><img src="https://github.com/suradet-ps/medsup-dash/actions/workflows/ci.yml/badge.svg" alt="CI Status"></a>
+  <a href="https://github.com/suradet-ps/medsup-dash/blob/main/LICENSE"><img src="https://img.shields.io/github/license/suradet-ps/medsup-dash" alt="License"></a>
   <a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="Semantic Release"></a>
   <a href="https://medsup-dash.netlify.app"><img src="https://img.shields.io/badge/Demo-Live-00C7B7?logo=netlify&logoColor=white" alt="Live Demo"></a>
 </p>
@@ -60,7 +60,7 @@ Follow these steps to set up the project locally.
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/pharmacist-sabot/medsup-dash.git
+   git clone https://github.com/suradet-ps/medsup-dash.git
    cd medsup-dash
    ```
 
