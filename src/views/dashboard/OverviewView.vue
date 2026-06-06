@@ -210,7 +210,7 @@ const years = Array.from(
                 class="hover:bg-warm-ivory transition-colors duration-150"
               >
                 <td class="px-6 py-4 text-mistral-black/60">
-                  {{ new Date(item.transaction_date).toLocaleDateString('th-TH') }}
+                  {{ formatDate(item.transaction_date) }}
                 </td>
                 <td class="px-6 py-4 font-mono text-mistral-black">
                   {{ item.bill_number || '-' }}

@@ -28,5 +28,15 @@ describe('formatters Utils', () => {
       // Implementation: if (!dateString) return '-';
       expect(formatDate('')).toBe('-');
     });
+
+    it('returns dash for malformed date strings', () => {
+      expect(formatDate('not-a-date')).toBe('-');
+      expect(formatDate('2023-13-99')).toBe('-');
+    });
+
+    it('accepts null and undefined', () => {
+      expect(formatDate(null)).toBe('-');
+      expect(formatDate(undefined)).toBe('-');
+    });
   });
 });
