@@ -10,7 +10,7 @@ const router = useRouter();
 
 async function handleLogout() {
   await authStore.logout();
-  router.push('/login');
+  await router.push('/login');
 }
 </script>
 
