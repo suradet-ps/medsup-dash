@@ -1,3 +1,9 @@
+## [1.1.3](https://github.com/suradet-ps/medsup-dash/compare/v1.1.2...v1.1.3) (2026-06-06)
+
+### 📦 Dependency Updates
+
+* **deps:** update dependency diff to v9 ([#23](https://github.com/suradet-ps/medsup-dash/issues/23)) ([23afd78](https://github.com/suradet-ps/medsup-dash/commit/23afd78546d096d381f858d37f71da93cb2951c1))
+
 ## [1.1.2](https://github.com/suradet-ps/medsup-dash/compare/v1.1.1...v1.1.2) (2026-06-06)
 
 ### 📦 Dependency Updates
