@@ -109,16 +109,19 @@ Follow these steps to set up the project locally.
 
 ## Deployment
 
-This project is deployed to [Vercel](https://vercel.com) via GitHub Actions (see
-[`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml)).
-Every pull request gets a preview deployment with a sticky PR comment; every
-push to `main` deploys to production.
+This project is deployed to [Vercel](https://vercel.com) via the
+[Vercel GitHub App](https://vercel.com/docs/git/vercel-for-github), which
+provisions a Preview deployment for every pull request and a Production
+deployment for every push to `main` automatically — no GitHub Actions
+required.
 
 ### One-time setup
 
-1. **Create a Vercel project** that imports this repository (Vercel dashboard
-   or `vercel link` locally).
-2. **Configure the build settings** in the Vercel project:
+1. **Install the Vercel GitHub App** at
+   <https://github.com/apps/vercel> and grant it access to this repository.
+2. **Import the project** in the
+   [Vercel dashboard](https://vercel.com/new) by selecting this repository.
+3. **Configure the build settings** in the Vercel project:
 
    | Setting          | Value                           |
    | :--------------- | :------------------------------ |
@@ -127,22 +130,11 @@ push to `main` deploys to production.
    | Output Directory | `dist`                          |
    | Framework Preset | Vite                            |
 
-3. **Create a Vercel token** at <https://vercel.com/account/tokens> with the
-   **Full Account** scope.
-4. **Add three repository secrets** under
-   _Settings → Secrets and variables → Actions_:
+4. **Add the Supabase env vars** to the Vercel project (both Production and
+   Preview environments): `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`.
 
-   | Secret              | Where to find it                                   |
-   | :------------------ | :------------------------------------------------- |
-   | `VERCEL_TOKEN`      | The token from step 3                              |
-   | `VERCEL_ORG_ID`     | Vercel dashboard → Team Settings → General → ID    |
-   | `VERCEL_PROJECT_ID` | Vercel dashboard → Project Settings → General → ID |
-
-5. **Add the Supabase env vars** to the Vercel project (Production and Preview
-   environments): `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`.
-
-After setup, every PR will automatically get a preview URL posted as a comment,
-and every merge to `main` will go live.
+After setup, every PR will automatically get a Preview URL, and every merge
+to `main` will deploy to Production.
 
 ## Project Structure
 
