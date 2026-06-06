@@ -40,10 +40,11 @@ async function handleLogout() {
           {{ authStore.user.email }}
         </span>
         <button
-          class="p-2 text-white/50 hover:text-[#fa520f] transition-colors duration-200" title="Logout"
+          class="p-2 text-white/50 hover:text-[#fa520f] transition-colors duration-200"
+          aria-label="Logout" title="Logout"
           @click="handleLogout"
         >
-          <LogOut class="w-4 h-4" />
+          <LogOut class="w-4 h-4" aria-hidden="true" />
         </button>
       </div>
     </div>

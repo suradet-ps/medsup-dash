@@ -5,9 +5,16 @@ import AppNavbar from '@/components/common/AppNavbar.vue';
 
 <template>
   <div class="flex flex-col min-h-screen bg-warm-ivory">
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-50 focus:bg-[#1f1f1f] focus:text-white focus:px-4 focus:py-2 focus:text-sm"
+    >
+      Skip to main content
+    </a>
+
     <AppNavbar />
 
-    <main class="grow container mx-auto px-4 py-8 max-w-6xl">
+    <main id="main-content" tabindex="-1" class="grow container mx-auto px-4 py-8 max-w-6xl">
       <slot />
     </main>
 

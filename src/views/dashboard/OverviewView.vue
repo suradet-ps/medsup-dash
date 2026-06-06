@@ -51,11 +51,11 @@ const years = Array.from(
 
       <!-- Fiscal Year Selector -->
       <div class="flex items-center gap-3 shrink-0">
-        <label class="text-xs text-[#1f1f1f]/50 uppercase tracking-wider whitespace-nowrap">
+        <label for="fiscal-year" class="text-xs text-[#1f1f1f]/50 uppercase tracking-wider whitespace-nowrap">
           ปีงบประมาณ
         </label>
         <select
-          v-model="store.selectedFiscalYear"
+          id="fiscal-year" v-model="store.selectedFiscalYear"
           class="px-4 py-2 bg-warm-ivory border border-block-gold rounded-none text-sm text-[#1f1f1f] outline-none focus:border-[#fa520f] focus:ring-1 focus:ring-[#fa520f] cursor-pointer transition-colors duration-200"
           @change="store.fetchByFiscalYear(store.selectedFiscalYear)"
         >

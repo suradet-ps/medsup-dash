@@ -27,7 +27,7 @@ async function handleLogin() {
 </script>
 
 <template>
-  <div class="w-full max-w-md mx-auto px-4">
+  <main class="w-full max-w-md mx-auto px-4">
     <!-- Mistral block gradient accent bar -->
     <div
       class="h-1 w-full mb-0"
@@ -49,7 +49,7 @@ async function handleLogin() {
           >
             <svg
               class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor"
-              stroke-width="1.5"
+              stroke-width="1.5" aria-hidden="true" focusable="false"
             >
               <path
                 stroke-linecap="square" stroke-linejoin="miter"
@@ -72,19 +72,20 @@ async function handleLogin() {
         <!-- Error message -->
         <div
           v-if="errorMsg"
+          role="alert" aria-live="assertive"
           class="p-3 bg-warm-ivory border border-[#fa520f]/30 text-[#fa520f] text-sm flex items-center gap-2"
         >
-          <AlertCircle class="w-4 h-4 shrink-0" />
+          <AlertCircle class="w-4 h-4 shrink-0" aria-hidden="true" />
           {{ errorMsg }}
         </div>
 
         <!-- Email -->
         <div>
-          <label class="block text-xs text-[#1f1f1f]/60 mb-1.5 uppercase tracking-wider">
+          <label for="login-email" class="block text-xs text-[#1f1f1f]/60 mb-1.5 uppercase tracking-wider">
             Email
           </label>
           <input
-            v-model="email" type="email" required
+            id="login-email" v-model="email" type="email" required autocomplete="email"
             class="w-full px-4 py-3 bg-warm-ivory border border-block-gold rounded-none text-[#1f1f1f] text-sm placeholder:text-[#1f1f1f]/30 outline-none transition-all duration-200 focus:border-[#fa520f] focus:ring-1 focus:ring-[#fa520f]"
             placeholder="pharmacist@sabot.hospital"
           >
@@ -92,11 +93,11 @@ async function handleLogin() {
 
         <!-- Password -->
         <div>
-          <label class="block text-xs text-[#1f1f1f]/60 mb-1.5 uppercase tracking-wider">
+          <label for="login-password" class="block text-xs text-[#1f1f1f]/60 mb-1.5 uppercase tracking-wider">
             Password
           </label>
           <input
-            v-model="password" type="password" required
+            id="login-password" v-model="password" type="password" required autocomplete="current-password"
             class="w-full px-4 py-3 bg-warm-ivory border border-block-gold rounded-none text-[#1f1f1f] text-sm placeholder:text-[#1f1f1f]/30 outline-none transition-all duration-200 focus:border-[#fa520f] focus:ring-1 focus:ring-[#fa520f]"
             placeholder="••••••••"
           >
@@ -115,5 +116,5 @@ async function handleLogin() {
     <p class="text-center text-xs text-[#1f1f1f]/30 mt-4">
       Medical Support Dashboard &mdash; Sabot Hospital
     </p>
-  </div>
+  </main>
 </template>
