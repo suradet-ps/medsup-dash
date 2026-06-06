@@ -107,6 +107,43 @@ Follow these steps to set up the project locally.
 | `test:unit`     | Run unit tests with Vitest             |
 | `test:coverage` | Run tests and generate coverage report |
 
+## Deployment
+
+This project is deployed to [Vercel](https://vercel.com) via GitHub Actions (see
+[`.github/workflows/vercel-deploy.yml`](.github/workflows/vercel-deploy.yml)).
+Every pull request gets a preview deployment with a sticky PR comment; every
+push to `main` deploys to production.
+
+### One-time setup
+
+1. **Create a Vercel project** that imports this repository (Vercel dashboard
+   or `vercel link` locally).
+2. **Configure the build settings** in the Vercel project:
+
+   | Setting          | Value                           |
+   | :--------------- | :------------------------------ |
+   | Install Command  | `bun install --frozen-lockfile` |
+   | Build Command    | `bun run build`                 |
+   | Output Directory | `dist`                          |
+   | Framework Preset | Vite                            |
+
+3. **Create a Vercel token** at <https://vercel.com/account/tokens> with the
+   **Full Account** scope.
+4. **Add three repository secrets** under
+   _Settings → Secrets and variables → Actions_:
+
+   | Secret              | Where to find it                                   |
+   | :------------------ | :------------------------------------------------- |
+   | `VERCEL_TOKEN`      | The token from step 3                              |
+   | `VERCEL_ORG_ID`     | Vercel dashboard → Team Settings → General → ID    |
+   | `VERCEL_PROJECT_ID` | Vercel dashboard → Project Settings → General → ID |
+
+5. **Add the Supabase env vars** to the Vercel project (Production and Preview
+   environments): `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`.
+
+After setup, every PR will automatically get a preview URL posted as a comment,
+and every merge to `main` will go live.
+
 ## Project Structure
 
 ```text

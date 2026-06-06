@@ -1,0 +1,67 @@
+name: Vercel Deployment
+
+# ============================================================================
+# Required GitHub repository secrets:
+#   VERCEL_TOKEN       Personal access token (https://vercel.com/account/tokens)
+#                      Required scope: Full Account
+#   VERCEL_ORG_ID      Vercel team/organization ID
+#                      (Vercel dashboard -> Team Settings -> General)
+#   VERCEL_PROJECT_ID  Vercel project ID
+#                      (Vercel dashboard -> Project Settings -> General)
+#
+# One-time Vercel project setup (UI or vercel link):
+#   1. Create a project that imports this repository.
+#   2. Set install command to:  bun install --frozen-lockfile
+#      Set build  command to:   bun run build
+#      Set output directory to: dist
+#   3. Add the three secrets above under
+#      Settings -> Secrets and variables -> Actions.
+#
+# Behavior:
+#   - pull_request -> Preview Deployment + sticky PR comment with URL
+#   - push to main -> Production Deployment
+# ============================================================================
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: write
+      deployments: write
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+      - name: Setup Bun
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version: 1.3.13
+
+      - name: Install Dependencies
+        run: bun install --frozen-lockfile
+
+      - name: Deploy to Vercel
+        uses: vercel/actions/vercel-deploy@v2
+        with:
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
+          github-comment: true
+          working-directory: ./
