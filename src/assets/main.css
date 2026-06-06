@@ -67,13 +67,6 @@ body {
 }
 
 /* ========================================
-   Mistral Block Gradient Utility
-   ======================================== */
-@utility gradient-mistral {
-  background: linear-gradient(90deg, #ffd900, #ffe295, #ffa110, #ff8105, #fb6424, #fa520f);
-}
-
-/* ========================================
    Custom Scrollbar — Golden theme
    ======================================== */
 ::-webkit-scrollbar {

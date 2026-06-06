@@ -1,12 +1,6 @@
 // src/types/database.types.ts
-
-export type Json
-  = | string
-    | number
-    | boolean
-    | null
-    | { [key: string]: Json | undefined }
-    | Json[];
+// Hand-rolled to match src/services/supabase.ts Database generic.
+// Regenerate via `supabase gen types typescript --project-id <id>` if schema changes.
 
 export type Database = {
   public: {
@@ -41,6 +35,10 @@ export type Database = {
         };
       };
     };
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
+    Enums: Record<string, never>;
+    CompositeTypes: Record<string, never>;
   };
 };
 

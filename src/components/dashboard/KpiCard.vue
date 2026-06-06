@@ -1,12 +1,12 @@
 <!-- src/components/dashboard/KpiCard.vue -->
 <script setup lang="ts">
-import type { Component } from 'vue';
+import type { FunctionalComponent } from 'vue';
 
 defineProps<{
   title: string;
   value: string;
   subValue?: string;
-  icon?: Component; // Lucide Icon Type
+  icon?: FunctionalComponent; // Lucide Icon
   colorClass?: string;
 }>();
 </script>
