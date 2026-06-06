@@ -32,7 +32,6 @@ This project leverages a cutting-edge stack to ensure speed, scalability, and de
 - **Styling:** [Tailwind CSS 4](https://tailwindcss.com/)
 - **State Management:** [Pinia](https://pinia.vuejs.org/)
 - **Backend / Auth:** [Supabase](https://supabase.com/)
-- **Charts:** [Chart.js](https://www.chartjs.org/) & [vue-chartjs](https://vue-chartjs.org/)
 - **Icons:** [Lucide Vue](https://lucide.dev/guide/packages/lucide-vue-next)
 - **Testing:** [Vitest](https://vitest.dev/)
 - **Linting:** [ESLint](https://eslint.org/) (with Antfu config)
@@ -40,7 +39,6 @@ This project leverages a cutting-edge stack to ensure speed, scalability, and de
 ## Key Features
 
 - **Secure Authentication**: Robust login and session management powered by Supabase Auth.
-- **Interactive Dashboard**: Real-time data visualization with dynamic charts and graphs.
 - **KPI Tracking**: specialized KPI cards for monitoring critical metrics at a glance.
 - **Fully Responsive**: Mobile-first design ensuring perfect usability across all devices.
 - **Blazing Fast**: Optimized build and HMR (Hot Module Replacement) with Vite.

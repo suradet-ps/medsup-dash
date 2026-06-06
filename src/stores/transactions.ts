@@ -31,19 +31,6 @@ export const useTransactionStore = defineStore('transactions', () => {
       .slice(0, 10),
   );
 
-  // Chart Data: Group by Drug Type
-  const chartData = computed(() => {
-    const grouped: Record<string, number> = {};
-    transactions.value.forEach((t) => {
-      const type = t.drug_type || 'Unknown';
-      grouped[type] = (grouped[type] || 0) + t.drug_value;
-    });
-    return {
-      labels: Object.keys(grouped),
-      data: Object.values(grouped),
-    };
-  });
-
   // --- Actions ---
 
   async function fetchByFiscalYear(year: number) {
@@ -125,7 +112,6 @@ export const useTransactionStore = defineStore('transactions', () => {
     totalCount,
     averageValue,
     recentTransactions,
-    chartData,
     quarterlySummary,
     fetchByFiscalYear,
   };
