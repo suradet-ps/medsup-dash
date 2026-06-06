@@ -1,7 +1,7 @@
 <!-- src/views/dashboard/OverviewView.vue -->
 <script setup lang="ts">
 import { Calculator, CalendarRange, Coins, Loader2, Receipt } from 'lucide-vue-next';
-import { onMounted } from 'vue';
+import { onMounted, onUnmounted } from 'vue';
 
 import KpiCard from '@/components/dashboard/KpiCard.vue';
 import { useTransactionStore } from '@/stores/transactions';
@@ -11,6 +11,11 @@ const store = useTransactionStore();
 
 onMounted(() => {
   store.fetchByFiscalYear(store.selectedFiscalYear);
+  store.subscribeRealtime();
+});
+
+onUnmounted(() => {
+  store.unsubscribeRealtime();
 });
 
 // Calculate Current Fiscal Year (Oct of prev year starts new fiscal year)

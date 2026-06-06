@@ -12,6 +12,8 @@ export const useTransactionStore = defineStore('transactions', () => {
   const error = ref<string | null>(null);
   const selectedFiscalYear = ref<number>(new Date().getFullYear() + (new Date().getMonth() >= 9 ? 1 : 0)); // Auto Fiscal Year
   let requestSeq = 0;
+  let realtimeChannel: ReturnType<typeof supabase.channel> | null = null;
+  let realtimeTimer: ReturnType<typeof setTimeout> | null = null;
 
   // --- Getters / Computed Metrics ---
 
@@ -103,6 +105,40 @@ export const useTransactionStore = defineStore('transactions', () => {
     return summary;
   });
 
+  // --- Realtime ---
+
+  function subscribeRealtime() {
+    if (realtimeChannel) {
+      return;
+    }
+    realtimeChannel = supabase
+      .channel('med_transactions_changes')
+      .on(
+        'postgres_changes',
+        { event: '*', schema: 'public', table: 'med_transactions' },
+        () => {
+          if (realtimeTimer) {
+            clearTimeout(realtimeTimer);
+          }
+          realtimeTimer = setTimeout(() => {
+            fetchByFiscalYear(selectedFiscalYear.value);
+          }, 1500);
+        },
+      )
+      .subscribe();
+  }
+
+  function unsubscribeRealtime() {
+    if (realtimeTimer) {
+      clearTimeout(realtimeTimer);
+      realtimeTimer = null;
+    }
+    if (realtimeChannel) {
+      supabase.removeChannel(realtimeChannel);
+      realtimeChannel = null;
+    }
+  }
+
   return {
     transactions,
     loading,
@@ -114,5 +150,7 @@ export const useTransactionStore = defineStore('transactions', () => {
     recentTransactions,
     quarterlySummary,
     fetchByFiscalYear,
+    subscribeRealtime,
+    unsubscribeRealtime,
   };
 });
