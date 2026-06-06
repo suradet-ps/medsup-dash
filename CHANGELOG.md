@@ -1,3 +1,32 @@
+## [1.1.0](https://github.com/suradet-ps/medsup-dash/compare/v1.0.12...v1.1.0) (2026-06-06)
+
+### 🚀 New Features
+
+* **transactions:** subscribe to realtime med_transactions changes ([27fd32d](https://github.com/suradet-ps/medsup-dash/commit/27fd32df1bd4895ec47200094e0cb93067b2f83d))
+
+### 🐛 Bug Fixes
+
+* **a11y:** label associations, alerts, lang attribute, skip link ([792c158](https://github.com/suradet-ps/medsup-dash/commit/792c15894fc8ae252a05a43d42fe99ced7fdcc6e))
+* **auth:** remove hard page reload from logout flow ([827de02](https://github.com/suradet-ps/medsup-dash/commit/827de022d7212daa9807bb5047bc1b520b9c7b2a))
+* **infra:** add SPA fallback redirect and harden auth/fetch paths ([a8bdaaf](https://github.com/suradet-ps/medsup-dash/commit/a8bdaaf3a7600c1eaa83e77edcc3a09c70ebcb04))
+* **utils:** guard formatDate against invalid date strings ([5fad2fa](https://github.com/suradet-ps/medsup-dash/commit/5fad2fab067819098318d3bc75daefa2b6eddf46))
+* **views:** import formatDate in OverviewView script setup ([6a1adbd](https://github.com/suradet-ps/medsup-dash/commit/6a1adbdf83c3e9bde8796a78353928803c055560))
+
+### ⚡ Performance
+
+* **bundle:** drop unused chart.js and vue-chartjs deps ([b540a6c](https://github.com/suradet-ps/medsup-dash/commit/b540a6cdf491646df0439792e9c90231008f8c8c))
+
+### 📦 Dependency Updates
+
+* **ci:** drop vercel-deploy workflow, use Vercel GitHub App ([d9ffbfc](https://github.com/suradet-ps/medsup-dash/commit/d9ffbfc308e258358bef3631635f0682309a1e03))
+* **deps:** bump everything to latest + add overrides for supply-chain vulns ([8794709](https://github.com/suradet-ps/medsup-dash/commit/8794709fabc5a874411a0df54041962d982bf4aa))
+* **hosting:** migrate from netlify to vercel ([503606a](https://github.com/suradet-ps/medsup-dash/commit/503606acb0fb6bfc6ac3173dfed5295ac56badca))
+* **typing,css,types:** tighten shims and remove dead code ([a7a3575](https://github.com/suradet-ps/medsup-dash/commit/a7a3575251510e2382d4f34e99515a2d51b94534))
+
+### ♻️ Refactoring
+
+* **css:** use design tokens for colors across components ([76cde44](https://github.com/suradet-ps/medsup-dash/commit/76cde4441462054dabc802987ca018165f8a6fcf)), closes [#1f1f1f](https://github.com/suradet-ps/medsup-dash/issues/1f1f1f) [#fa520f](https://github.com/suradet-ps/medsup-dash/issues/fa520f)
+
 ## [1.0.12](https://github.com/suradet-ps/medsup-dash/compare/v1.0.11...v1.0.12) (2026-04-23)
 
 ### 📦 Dependency Updates
