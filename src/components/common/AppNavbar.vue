@@ -15,7 +15,7 @@ async function handleLogout() {
 </script>
 
 <template>
-  <header class="bg-[#1f1f1f] sticky top-0 z-30">
+  <header class="bg-mistral-black sticky top-0 z-30">
     <!-- Mistral block gradient accent bar -->
     <div
       class="h-0.5 w-full"
@@ -40,7 +40,7 @@ async function handleLogout() {
           {{ authStore.user.email }}
         </span>
         <button
-          class="p-2 text-white/50 hover:text-[#fa520f] transition-colors duration-200"
+          class="p-2 text-white/50 hover:text-mistral-orange transition-colors duration-200"
           aria-label="Logout" title="Logout"
           @click="handleLogout"
         >

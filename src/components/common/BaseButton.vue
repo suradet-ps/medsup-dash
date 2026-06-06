@@ -10,19 +10,19 @@ withDefaults(defineProps<Props>(), {
 
 const variantClasses = {
   primary:
-        'bg-[#1f1f1f] text-white hover:bg-[#fa520f] shadow-golden-sm hover:shadow-golden',
+        'bg-mistral-black text-white hover:bg-mistral-orange shadow-golden-sm hover:shadow-golden',
   secondary:
-        'bg-[#fff0c2] text-[#1f1f1f] border border-[#ffe295] hover:bg-[#ffd06a] hover:border-[#ffa110]',
+        'bg-cream text-mistral-black border border-block-gold hover:bg-sunshine-300 hover:border-sunshine-700',
   danger:
-        'bg-[#fa520f] text-white hover:bg-[#fb6424] shadow-golden-sm',
+        'bg-mistral-orange text-white hover:bg-mistral-flame shadow-golden-sm',
   ghost:
-        'bg-transparent text-[#1f1f1f]/60 hover:bg-[oklab(0_0_0/0.06)] hover:text-[#1f1f1f]',
+        'bg-transparent text-mistral-black/60 hover:bg-[oklab(0_0_0/0.06)] hover:text-mistral-black',
 };
 </script>
 
 <template>
   <button
-    class="inline-flex items-center justify-center px-3 py-3 rounded-none font-normal tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#fa520f] disabled:opacity-50 disabled:cursor-not-allowed uppercase text-sm"
+    class="inline-flex items-center justify-center px-3 py-3 rounded-none font-normal tracking-wide transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-mistral-orange disabled:opacity-50 disabled:cursor-not-allowed uppercase text-sm"
     :class="variantClasses[variant]"
   >
     <slot />

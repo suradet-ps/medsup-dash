@@ -45,10 +45,10 @@ const years = Array.from(
         </div>
 
         <div>
-          <h1 class="text-xl text-[#1f1f1f] leading-snug">
+          <h1 class="text-xl text-mistral-black leading-snug">
             Dashboard รายงานมูลค่ายาสนับสนุน
           </h1>
-          <p class="text-sm text-[#1f1f1f]/50 mt-0.5">
+          <p class="text-sm text-mistral-black/50 mt-0.5">
             ระบบติดตามงบประมาณสนับสนุนทางการแพทย์
           </p>
         </div>
@@ -56,12 +56,12 @@ const years = Array.from(
 
       <!-- Fiscal Year Selector -->
       <div class="flex items-center gap-3 shrink-0">
-        <label for="fiscal-year" class="text-xs text-[#1f1f1f]/50 uppercase tracking-wider whitespace-nowrap">
+        <label for="fiscal-year" class="text-xs text-mistral-black/50 uppercase tracking-wider whitespace-nowrap">
           ปีงบประมาณ
         </label>
         <select
           id="fiscal-year" v-model="store.selectedFiscalYear"
-          class="px-4 py-2 bg-warm-ivory border border-block-gold rounded-none text-sm text-[#1f1f1f] outline-none focus:border-[#fa520f] focus:ring-1 focus:ring-[#fa520f] cursor-pointer transition-colors duration-200"
+          class="px-4 py-2 bg-warm-ivory border border-block-gold rounded-none text-sm text-mistral-black outline-none focus:border-mistral-orange focus:ring-1 focus:ring-mistral-orange cursor-pointer transition-colors duration-200"
           @change="store.fetchByFiscalYear(store.selectedFiscalYear)"
         >
           <option v-for="y in years" :key="y" :value="y">
@@ -72,7 +72,7 @@ const years = Array.from(
     </div>
 
     <!-- Loading State -->
-    <div v-if="store.loading" class="h-80 flex flex-col items-center justify-center text-[#1f1f1f]/40">
+    <div v-if="store.loading" class="h-80 flex flex-col items-center justify-center text-mistral-black/50">
       <Loader2 class="w-8 h-8 animate-spin mb-4 text-sunshine-700" />
       <p class="text-sm tracking-wide">
         กำลังประมวลผลข้อมูล...
@@ -84,15 +84,15 @@ const years = Array.from(
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <KpiCard
           title="มูลค่ารวมทั้งปี" :value="formatCurrency(store.totalValue)" :icon="Coins"
-          color-class="bg-[#ffd06a] text-[#1f1f1f]"
+          color-class="bg-sunshine-300 text-mistral-black"
         />
         <KpiCard
           title="จำนวนรายการทั้งหมด" :value="store.totalCount.toLocaleString()" sub-value="Transactions"
-          :icon="Receipt" color-class="bg-[#ffb83e] text-[#1f1f1f]"
+          :icon="Receipt" color-class="bg-sunshine-500 text-mistral-black"
         />
         <KpiCard
           title="มูลค่าเฉลี่ยต่อใบยา" :value="formatCurrency(store.averageValue)" :icon="Calculator"
-          color-class="bg-[#ffe295] text-[#fa520f]"
+          color-class="bg-block-gold text-mistral-orange"
         />
       </div>
 
@@ -103,10 +103,10 @@ const years = Array.from(
       >
         <!-- Section Header -->
         <div class="px-6 py-5 flex items-center gap-3">
-          <span class="w-1 h-5 bg-[#fa520f] shrink-0" />
-          <h3 class="text-base text-[#1f1f1f]">
+          <span class="w-1 h-5 bg-mistral-orange shrink-0" />
+          <h3 class="text-base text-mistral-black">
             สรุปรายไตรมาส
-            <span class="text-[#1f1f1f]/40 text-sm ml-1">Quarterly Report</span>
+            <span class="text-mistral-black/50 text-sm ml-1">Quarterly Report</span>
           </h3>
         </div>
 
@@ -115,13 +115,13 @@ const years = Array.from(
           <div
             class="bg-warm-ivory p-5 hover:-translate-y-0.5 transition-all duration-200"
           >
-            <p class="text-xs text-[#1f1f1f]/50 mb-2 uppercase tracking-wider">
+            <p class="text-xs text-mistral-black/50 mb-2 uppercase tracking-wider">
               ไตรมาส 1
             </p>
-            <p class="text-[11px] text-[#1f1f1f]/40 mb-3">
+            <p class="text-[11px] text-mistral-black/50 mb-3">
               ต.ค. – ธ.ค.
             </p>
-            <div class="text-xl text-[#1f1f1f]">
+            <div class="text-xl text-mistral-black">
               {{ formatCurrency(store.quarterlySummary.q1) }}
             </div>
           </div>
@@ -130,13 +130,13 @@ const years = Array.from(
           <div
             class="bg-warm-ivory p-5 hover:-translate-y-0.5 transition-all duration-200"
           >
-            <p class="text-xs text-[#1f1f1f]/50 mb-2 uppercase tracking-wider">
+            <p class="text-xs text-mistral-black/50 mb-2 uppercase tracking-wider">
               ไตรมาส 2
             </p>
-            <p class="text-[11px] text-[#1f1f1f]/40 mb-3">
+            <p class="text-[11px] text-mistral-black/50 mb-3">
               ม.ค. – มี.ค.
             </p>
-            <div class="text-xl text-[#1f1f1f]">
+            <div class="text-xl text-mistral-black">
               {{ formatCurrency(store.quarterlySummary.q2) }}
             </div>
           </div>
@@ -145,13 +145,13 @@ const years = Array.from(
           <div
             class="bg-warm-ivory p-5 hover:-translate-y-0.5 transition-all duration-200"
           >
-            <p class="text-xs text-[#1f1f1f]/50 mb-2 uppercase tracking-wider">
+            <p class="text-xs text-mistral-black/50 mb-2 uppercase tracking-wider">
               ไตรมาส 3
             </p>
-            <p class="text-[11px] text-[#1f1f1f]/40 mb-3">
+            <p class="text-[11px] text-mistral-black/50 mb-3">
               เม.ย. – มิ.ย.
             </p>
-            <div class="text-xl text-[#1f1f1f]">
+            <div class="text-xl text-mistral-black">
               {{ formatCurrency(store.quarterlySummary.q3) }}
             </div>
           </div>
@@ -160,13 +160,13 @@ const years = Array.from(
           <div
             class="bg-warm-ivory p-5 hover:-translate-y-0.5 transition-all duration-200"
           >
-            <p class="text-xs text-[#1f1f1f]/50 mb-2 uppercase tracking-wider">
+            <p class="text-xs text-mistral-black/50 mb-2 uppercase tracking-wider">
               ไตรมาส 4
             </p>
-            <p class="text-[11px] text-[#1f1f1f]/40 mb-3">
+            <p class="text-[11px] text-mistral-black/50 mb-3">
               ก.ค. – ก.ย.
             </p>
-            <div class="text-xl text-[#1f1f1f]">
+            <div class="text-xl text-mistral-black">
               {{ formatCurrency(store.quarterlySummary.q4) }}
             </div>
           </div>
@@ -180,26 +180,26 @@ const years = Array.from(
       >
         <!-- Section Header -->
         <div class="px-6 py-5 border-b border-block-gold flex items-center gap-3">
-          <span class="w-1 h-5 bg-[#fa520f] shrink-0" />
-          <h3 class="text-base text-[#1f1f1f]">
+          <span class="w-1 h-5 bg-mistral-orange shrink-0" />
+          <h3 class="text-base text-mistral-black">
             รายการล่าสุด
           </h3>
         </div>
 
         <div class="overflow-x-auto">
           <table class="w-full text-sm text-left">
-            <thead class="bg-block-gold text-[#1f1f1f]/60">
+            <thead class="bg-block-gold text-mistral-black/60">
               <tr>
-                <th class="px-6 py-4 text-xs uppercase tracking-wider font-normal">
+                <th scope="col" class="px-6 py-4 text-xs uppercase tracking-wider font-normal">
                   วันที่
                 </th>
-                <th class="px-6 py-4 text-xs uppercase tracking-wider font-normal">
+                <th scope="col" class="px-6 py-4 text-xs uppercase tracking-wider font-normal">
                   เลขที่บิล
                 </th>
-                <th class="px-6 py-4 text-xs uppercase tracking-wider font-normal">
+                <th scope="col" class="px-6 py-4 text-xs uppercase tracking-wider font-normal">
                   ประเภทยา
                 </th>
-                <th class="px-6 py-4 text-xs uppercase tracking-wider font-normal text-right">
+                <th scope="col" class="px-6 py-4 text-xs uppercase tracking-wider font-normal text-right">
                   มูลค่า (บาท)
                 </th>
               </tr>
@@ -209,18 +209,18 @@ const years = Array.from(
                 v-for="item in store.recentTransactions" :key="item.id"
                 class="hover:bg-warm-ivory transition-colors duration-150"
               >
-                <td class="px-6 py-4 text-[#1f1f1f]/60">
+                <td class="px-6 py-4 text-mistral-black/60">
                   {{ new Date(item.transaction_date).toLocaleDateString('th-TH') }}
                 </td>
-                <td class="px-6 py-4 font-mono text-[#1f1f1f]">
+                <td class="px-6 py-4 font-mono text-mistral-black">
                   {{ item.bill_number || '-' }}
                 </td>
                 <td class="px-6 py-4">
-                  <span class="px-3 py-1 bg-warm-ivory border border-block-gold text-xs text-[#fa520f]">
+                  <span class="px-3 py-1 bg-warm-ivory border border-block-gold text-xs text-mistral-orange">
                     {{ item.drug_type }}
                   </span>
                 </td>
-                <td class="px-6 py-4 text-right text-[#1f1f1f]">
+                <td class="px-6 py-4 text-right text-mistral-black">
                   {{ formatCurrency(item.drug_value) }}
                 </td>
               </tr>
@@ -228,7 +228,7 @@ const years = Array.from(
               <!-- Empty State -->
               <tr v-if="store.recentTransactions.length === 0">
                 <td colspan="4" class="px-6 py-16 text-center bg-warm-ivory">
-                  <div class="flex flex-col items-center gap-3 text-[#1f1f1f]/30">
+                  <div class="flex flex-col items-center gap-3 text-mistral-black/50">
                     <Receipt class="w-8 h-8" />
                     <p class="text-sm">
                       ไม่พบข้อมูลรายการในปีงบประมาณนี้

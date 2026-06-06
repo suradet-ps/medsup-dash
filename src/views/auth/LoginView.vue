@@ -57,13 +57,13 @@ async function handleLogin() {
               />
             </svg>
           </div>
-          <span class="text-[#1f1f1f] text-base tracking-wide">MedValue Support</span>
+          <span class="text-mistral-black text-base tracking-wide">MedValue Support</span>
         </div>
 
-        <h1 class="text-2xl text-[#1f1f1f] leading-tight">
+        <h1 class="text-2xl text-mistral-black leading-tight">
           Welcome Back
         </h1>
-        <p class="text-[#1f1f1f]/50 text-sm mt-1">
+        <p class="text-mistral-black/50 text-sm mt-1">
           Sign in to access the dashboard
         </p>
       </div>
@@ -73,7 +73,7 @@ async function handleLogin() {
         <div
           v-if="errorMsg"
           role="alert" aria-live="assertive"
-          class="p-3 bg-warm-ivory border border-[#fa520f]/30 text-[#fa520f] text-sm flex items-center gap-2"
+          class="p-3 bg-warm-ivory border border-mistral-orange/30 text-mistral-orange text-sm flex items-center gap-2"
         >
           <AlertCircle class="w-4 h-4 shrink-0" aria-hidden="true" />
           {{ errorMsg }}
@@ -81,24 +81,24 @@ async function handleLogin() {
 
         <!-- Email -->
         <div>
-          <label for="login-email" class="block text-xs text-[#1f1f1f]/60 mb-1.5 uppercase tracking-wider">
+          <label for="login-email" class="block text-xs text-mistral-black/60 mb-1.5 uppercase tracking-wider">
             Email
           </label>
           <input
             id="login-email" v-model="email" type="email" required autocomplete="email"
-            class="w-full px-4 py-3 bg-warm-ivory border border-block-gold rounded-none text-[#1f1f1f] text-sm placeholder:text-[#1f1f1f]/30 outline-none transition-all duration-200 focus:border-[#fa520f] focus:ring-1 focus:ring-[#fa520f]"
+            class="w-full px-4 py-3 bg-warm-ivory border border-block-gold rounded-none text-mistral-black text-sm placeholder:text-mistral-black/30 outline-none transition-all duration-200 focus:border-mistral-orange focus:ring-1 focus:ring-mistral-orange"
             placeholder="pharmacist@sabot.hospital"
           >
         </div>
 
         <!-- Password -->
         <div>
-          <label for="login-password" class="block text-xs text-[#1f1f1f]/60 mb-1.5 uppercase tracking-wider">
+          <label for="login-password" class="block text-xs text-mistral-black/60 mb-1.5 uppercase tracking-wider">
             Password
           </label>
           <input
             id="login-password" v-model="password" type="password" required autocomplete="current-password"
-            class="w-full px-4 py-3 bg-warm-ivory border border-block-gold rounded-none text-[#1f1f1f] text-sm placeholder:text-[#1f1f1f]/30 outline-none transition-all duration-200 focus:border-[#fa520f] focus:ring-1 focus:ring-[#fa520f]"
+            class="w-full px-4 py-3 bg-warm-ivory border border-block-gold rounded-none text-mistral-black text-sm placeholder:text-mistral-black/30 outline-none transition-all duration-200 focus:border-mistral-orange focus:ring-1 focus:ring-mistral-orange"
             placeholder="••••••••"
           >
         </div>
@@ -113,7 +113,7 @@ async function handleLogin() {
     </div>
 
     <!-- Bottom caption -->
-    <p class="text-center text-xs text-[#1f1f1f]/30 mt-4">
+    <p class="text-center text-xs text-mistral-black/50 mt-4">
       Medical Support Dashboard &mdash; Sabot Hospital
     </p>
   </main>

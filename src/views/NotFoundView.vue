@@ -16,10 +16,10 @@ import BaseButton from '@/components/common/BaseButton.vue';
     <div class="h-1 w-24 mx-auto my-6" style="background: linear-gradient(90deg, #ffd900, #ffa110, #fa520f);" />
 
     <div class="space-y-4 max-w-md mx-auto">
-      <h2 class="text-2xl text-[#1f1f1f]">
+      <h2 class="text-2xl text-mistral-black">
         Page Not Found
       </h2>
-      <p class="text-sm text-[#1f1f1f]/50 leading-relaxed">
+      <p class="text-sm text-mistral-black/50 leading-relaxed">
         Oops! The page you are looking for might have been removed,
         had its name changed, or is temporarily unavailable.
       </p>

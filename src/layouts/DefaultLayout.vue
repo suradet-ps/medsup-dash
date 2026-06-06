@@ -18,7 +18,7 @@ import AppNavbar from '@/components/common/AppNavbar.vue';
       <slot />
     </main>
 
-    <footer class="bg-[#1f1f1f] mt-auto">
+    <footer class="bg-mistral-black mt-auto">
       <!-- Mistral block gradient accent bar -->
       <div
         class="h-1 w-full"
