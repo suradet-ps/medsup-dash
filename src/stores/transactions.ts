@@ -11,6 +11,7 @@ export const useTransactionStore = defineStore('transactions', () => {
   const loading = ref(false);
   const error = ref<string | null>(null);
   const selectedFiscalYear = ref<number>(new Date().getFullYear() + (new Date().getMonth() >= 9 ? 1 : 0)); // Auto Fiscal Year
+  let requestSeq = 0;
 
   // --- Getters / Computed Metrics ---
 
@@ -46,6 +47,7 @@ export const useTransactionStore = defineStore('transactions', () => {
   // --- Actions ---
 
   async function fetchByFiscalYear(year: number) {
+    const my = ++requestSeq;
     loading.value = true;
     error.value = null;
     selectedFiscalYear.value = year;
@@ -62,17 +64,28 @@ export const useTransactionStore = defineStore('transactions', () => {
         .lte('transaction_date', endDate)
         .order('transaction_date', { ascending: false });
 
-      if (dbError)
+      if (my !== requestSeq) {
+        return;
+      }
+
+      if (dbError) {
         throw dbError;
+      }
 
       transactions.value = data || [];
     }
-    catch (err: any) {
+    catch (err) {
+      if (my !== requestSeq) {
+        return;
+      }
       console.error('Fetch Error:', err);
-      error.value = err.message || 'Failed to fetch data';
+      error.value = err instanceof Error ? err.message : 'Failed to fetch data';
+      transactions.value = [];
     }
     finally {
-      loading.value = false;
+      if (my === requestSeq) {
+        loading.value = false;
+      }
     }
   }
 

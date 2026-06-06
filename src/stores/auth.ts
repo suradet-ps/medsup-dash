@@ -8,11 +8,32 @@ import { supabase } from '@/services/supabase';
 export const useAuthStore = defineStore('auth', () => {
   const user = ref<User | null>(null);
   const loading = ref(false);
+  const initialized = ref(false);
+  let unsubscribe: (() => void) | null = null;
 
-  // Initialize: Check for existing session
   async function init() {
-    const { data } = await supabase.auth.getUser();
-    user.value = data.user;
+    if (initialized.value) {
+      return;
+    }
+
+    try {
+      const { data } = await supabase.auth.getSession();
+      user.value = data.session?.user ?? null;
+    }
+    catch (error) {
+      console.error('Auth Init Error:', error instanceof Error ? error.message : error);
+      user.value = null;
+    }
+    finally {
+      initialized.value = true;
+    }
+
+    if (!unsubscribe) {
+      const { data } = supabase.auth.onAuthStateChange((_event, session) => {
+        user.value = session?.user ?? null;
+      });
+      unsubscribe = data.subscription.unsubscribe;
+    }
   }
 
   async function login(email: string, pass: string) {
@@ -22,14 +43,15 @@ export const useAuthStore = defineStore('auth', () => {
         email,
         password: pass,
       });
-      if (error)
+      if (error) {
         throw error;
+      }
       user.value = data.user;
       return true;
     }
     catch (error) {
-      console.error('Login Error:', error);
-      throw error; // Propagate error to UI
+      console.error('Login Error:', error instanceof Error ? error.message : error);
+      throw error;
     }
     finally {
       loading.value = false;
@@ -37,10 +59,16 @@ export const useAuthStore = defineStore('auth', () => {
   }
 
   async function logout() {
-    await supabase.auth.signOut();
-    user.value = null;
-    window.location.reload(); // Force reload to clear all states
+    try {
+      await supabase.auth.signOut();
+    }
+    catch (error) {
+      console.error('Logout Error:', error instanceof Error ? error.message : error);
+    }
+    finally {
+      user.value = null;
+    }
   }
 
-  return { user, loading, init, login, logout };
+  return { user, loading, initialized, init, login, logout };
 });
