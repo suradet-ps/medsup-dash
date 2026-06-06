@@ -5,7 +5,7 @@ import { onMounted, onUnmounted } from 'vue';
 
 import KpiCard from '@/components/dashboard/KpiCard.vue';
 import { useTransactionStore } from '@/stores/transactions';
-import { formatCurrency } from '@/utils/formatters';
+import { formatCurrency, formatDate } from '@/utils/formatters';
 
 const store = useTransactionStore();
 
