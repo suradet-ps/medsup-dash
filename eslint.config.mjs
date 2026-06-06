@@ -22,7 +22,10 @@ export default antfu({
     'node/prefer-global/process': ['off'],
     'node/no-process-env': ['error'],
     'perfectionist/sort-imports': ['error', {
-      tsconfigRootDir: '.',
+      tsconfig: {
+        filename: './tsconfig.app.json',
+        rootDir: '.',
+      },
     }],
     'unicorn/filename-case': ['error', {
       cases: {
