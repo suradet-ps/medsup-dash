@@ -1,3 +1,9 @@
+## [1.1.4](https://github.com/suradet-ps/medsup-dash/compare/v1.1.3...v1.1.4) (2026-06-19)
+
+### 📦 Dependency Updates
+
+* **deps:** update actions/checkout action to v7 ([e10645b](https://github.com/suradet-ps/medsup-dash/commit/e10645bbcbfc779625dcc3c33b82ebed525698da))
+
 ## [1.1.3](https://github.com/suradet-ps/medsup-dash/compare/v1.1.2...v1.1.3) (2026-06-06)
 
 ### 📦 Dependency Updates
