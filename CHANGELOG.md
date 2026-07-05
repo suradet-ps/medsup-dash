@@ -1,3 +1,9 @@
+## [1.1.5](https://github.com/suradet-ps/medsup-dash/compare/v1.1.4...v1.1.5) (2026-07-05)
+
+### 📦 Dependency Updates
+
+* **deps:** update dependency @types/node to v26 ([0c679f4](https://github.com/suradet-ps/medsup-dash/commit/0c679f4217f583fccdbe4ef4b131158ac9a543d1))
+
 ## [1.1.4](https://github.com/suradet-ps/medsup-dash/compare/v1.1.3...v1.1.4) (2026-06-19)
 
 ### 📦 Dependency Updates
